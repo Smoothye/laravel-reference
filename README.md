@@ -1,3 +1,48 @@
+# Install dependencies
+```bash
+npm install
+composer install
+```
+## Build Project
+```bash
+npm run build
+```
+## Generate App Key
+```bash
+php artisan key:generate
+```
+# Database Setup
+```bash
+# view all artisan commands
+php artisan
+
+# create a new table model togheter with the:
+#    migration file (-m)
+#    factory   file (-f)
+#    seeder    file (-s)
+php make:model <name> -mfs
+
+# run all new migration and (optionally) the seeders
+php artisan migrate --seed
+```
+# Steps for hosting on CPanel
+1) Run the following commands in the root of the project
+```bash
+php artisan config:cache
+php artisan route:cache
+composer install --optimize-autoloader --no-dev
+```
+2) Compress the project and upload it to CPanel
+3) Create the database and user for the database
+4) Import database to phpMyAdmin
+5) Edit the `.env` file with the corresponding `APP_URL` and database information
+6) Copy all files in the `public` directory to the root directory
+7) Modify `index.php` with the correct paths for `vendor` and `bootstrap`
+
+
+
+# Bellow is the default laravel README.md
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
